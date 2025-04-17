@@ -1,0 +1,162 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Уменьшаем gap для компактности */
+  width: 100%; /* Делаем ширину формы 100% */
+  max-width: 450px; /* Устанавливаем максимальную ширину */
+  margin: 5px auto;
+}
+
+.input-value {
+  width: 100%; /* В ширину 100% от контейнера */
+  width: 272px; /* Максимальная ширина для инпута */
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 0px 10px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #808080;
+  transition: border-color 0.3s ease;
+}
+
+.input-value:hover,
+.input-value:focus {
+  border: 1px solid #4e75ff;
+}
+
+.btn-input {
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 0px 16px;
+  width: 91px;
+  height: 40px;
+  background: #4e75ff;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.btn-input:hover {
+  background: #6c8cff;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px 50px;
+  list-style: none;
+  padding: 20px;
+  max-width: 1200px; /* Максимальная ширина для центрирования */
+  margin: 0 auto; /* Центрирование галереи */
+}
+
+.gallery-item {
+  width: 360px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  /*   border-radius: 0px 0px 4px 4px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2); */
+}
+
+.image-container {
+  width: 100%;
+  height: 150px;
+  /*object-fit: cover;*/
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-container {
+  width: inherit;
+}
+
+.img-desc {
+  display: flex;
+  gap: 20px;
+  /*justify-content: space-between; /* Равномерное распределение с отступами между элементами */
+  padding: 0px 10px;
+  margin-top: 5px;
+  background: #f8f8f8;
+}
+
+.img-desc-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.img-desc-title {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.img-desc-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 200%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.loading {
+  font-size: 18px;
+  color: #4e75ff;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.gallery-link {
+  display: block;
+  text-decoration: none;
+  height: 100%;
+}
+
+.gallery-link:hover {
+  cursor: zoom-in;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px dotted #0611e5;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
