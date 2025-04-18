@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    
     <main>
       <form class="form">
         <label>
@@ -23,13 +22,19 @@
         <button type="submit" class="btn-input">Search</button>
       </form>
 
+      
+
+      <!-- Add gallery items to this list -->
+      <ul class="gallery"></ul>
+      <div class="container-load-more">
+        <button type="button" class="btn-load-more btn-load-more-hidden">
+          Load more
+        </button>
+      </div>
       <!-- Loading identificator -->
       <div class="loading" style="display: none">
         <span class="loader"></span>
       </div>
-
-      <!-- Add gallery items to this list -->
-      <ul class="gallery"></ul>
     </main>
 
     <script type="module" src="./main.js"></script>
