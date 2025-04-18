@@ -52,8 +52,6 @@ refs.formEl.addEventListener('submit', async evt => {
     const responseGetImages = await getImagesByQuery(query, page);
     hideLoader();
     totalPages = Math.ceil(responseGetImages.data.totalHits / 15); //округление в большую сторону
-    //console.log(responseGetImages.data.totalHits);
-    //console.log(totalPages);
     if (responseGetImages.data.hits.length === 0 && refs.inputEl.value !== '') {
       // Если нет изображений, показываем сообщение
       iziToast.error({
@@ -64,10 +62,12 @@ refs.formEl.addEventListener('submit', async evt => {
     } else {
       // Если есть изображения, скрываем сообщение
       renderPhotoList(responseGetImages.data.hits);
-      showLoadMoreButton();
+      if(totalPages > 1){
+        showLoadMoreButton();
+      }
     }
   } catch (error) {
-    //refs.loadingEl.style.display = 'none';
+    hideLoadMoreButton();
     hideLoader();
     iziToast.error({
       title: 'Error',
@@ -120,7 +120,7 @@ refs.loadMoreEl.addEventListener('click', async () => {
     }
   
   } catch (error) {
-    //refs.loadingEl.style.display = 'none';
+    hideLoadMoreButton();
     hideLoader();
     iziToast.error({
       title: 'Error',
